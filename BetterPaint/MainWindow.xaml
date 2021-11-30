@@ -7,6 +7,85 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="6" Grid.RowSpan="6">
+            <Label>Ilość kątów:</Label>
+            <TextBox Name="PolygonCountTB" Text="4"></TextBox>
+            <Button Margin="0 0 0 10" Name="PolygonCountButton" Click="PolygonCountButton_OnClick">Zatwierdź</Button>
+
+            <Label>Punkt</Label>
+            <DockPanel>
+                <Label>X:</Label>
+                <TextBox Name="ValueX">0</TextBox>
+            </DockPanel>
+            <DockPanel>
+                <Label>Y:</Label>
+                <TextBox Name="ValueY">0</TextBox>
+            </DockPanel>
+            <Button Name="AddPointButton" Click="AddPointButton_OnClick" Margin=" 0 0 0 10">Dodaj punkt</Button>
+
+            <Label>Pozycja</Label>
+            <DockPanel>
+                <Label>Wektor X:</Label>
+                <TextBox Name="VectorX">0</TextBox>
+            </DockPanel>
+            <DockPanel>
+                <Label>Wektor Y:</Label>
+                <TextBox Name="VectorY">0</TextBox>
+            </DockPanel>
+            <Button Name="ChangePositionButton" Click="ChangePositionButton_OnClick" Margin="0 0 0 10">Zmień pozycję</Button>
+
+            <Label>Obrót</Label>
+            <DockPanel>
+                <Label>Pozycja X:</Label>
+                <TextBox Name="XPosition">0</TextBox>
+            </DockPanel>
+            <DockPanel>
+                <Label>Pozycja Y:</Label>
+                <TextBox Name="YPosition">0</TextBox>
+            </DockPanel>
+            <DockPanel>
+                <Label>Kąt obrotu:</Label>
+                <TextBox Name="Degrees">0</TextBox>
+            </DockPanel>
+            <Button Name="RotateButton" Click="RotateButton_OnClick" Margin="0 0 0 25">Obróć</Button>
+
+            <WrapPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" VerticalAlignment="Center">
+                <RadioButton Name="DrawRadio" Margin="3px" IsChecked="True">Rysuj</RadioButton>
+                <RadioButton Name="SelectRadio" Margin="3px">Przemieść</RadioButton>
+                <RadioButton Name="ShapeRadio" Margin="3px">Wymiary</RadioButton>
+            </WrapPanel>
+
+            <Button Name="Load" Click="Load_OnClick"  Margin="0 0 0 5">Wczytaj</Button>
+
+            <Button Name="Save" Click="Save_OnClick" Margin="0 0 0 5">Zapisz</Button>
+
+
+            <Button Name="EndEditionButton" Click="EndEditionButton_OnClick" Margin="0 0 0 5">Zakończ edycje</Button>
+
+
+            <Button Name="ClearButton" Click="ClearButton_OnClick"  Margin="0 0 0 5">Wyczyść</Button>
+
+        </StackPanel>
+
+        <Canvas  Grid.RowSpan="6" Grid.ColumnSpan="6" Name="PolygonsCanvas" MouseDown="MouseClick" Background="Transparent" MouseMove="ChangePosition" MouseUp="MousceButtonUp"></Canvas>
     </Grid>
 </Window>
