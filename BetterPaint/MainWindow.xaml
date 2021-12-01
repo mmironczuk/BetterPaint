@@ -68,24 +68,35 @@
             </DockPanel>
             <Button Name="RotateButton" Click="RotateButton_OnClick" Margin="0 0 0 25">Obróć</Button>
 
+            <Label>Skalowanie</Label>
+            <DockPanel>
+                <Label>X:</Label>
+                <TextBox Name="ScaleX">0</TextBox>
+            </DockPanel>
+            <DockPanel>
+                <Label>Y:</Label>
+                <TextBox Name="ScaleY">0</TextBox>
+            </DockPanel>
+            <DockPanel>
+                <Label>Skala:</Label>
+                <TextBox Name="Scale">0</TextBox>
+            </DockPanel>
+            <Button Name="ScaleButton" Click="ScaleButton_OnClick" Margin="0 0 0 10">Skaluj</Button>
+
             <WrapPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" VerticalAlignment="Center">
                 <RadioButton Name="DrawRadio" Margin="3px" IsChecked="True">Rysuj</RadioButton>
                 <RadioButton Name="SelectRadio" Margin="3px">Przemieść</RadioButton>
-                <RadioButton Name="ShapeRadio" Margin="3px">Wymiary</RadioButton>
+                <RadioButton Name="TurnRadio" Margin="3px">Obrót i skala</RadioButton>
             </WrapPanel>
 
             <Button Name="Load" Click="Load_OnClick"  Margin="0 0 0 5">Wczytaj</Button>
 
             <Button Name="Save" Click="Save_OnClick" Margin="0 0 0 5">Zapisz</Button>
 
-
-            <Button Name="EndEditionButton" Click="EndEditionButton_OnClick" Margin="0 0 0 5">Zakończ edycje</Button>
-
-
             <Button Name="ClearButton" Click="ClearButton_OnClick"  Margin="0 0 0 5">Wyczyść</Button>
 
         </StackPanel>
 
-        <Canvas  Grid.RowSpan="6" Grid.ColumnSpan="6" Name="PolygonsCanvas" MouseDown="MouseClick" Background="Transparent" MouseMove="ChangePosition" MouseUp="MousceButtonUp"></Canvas>
+        <Canvas  Grid.RowSpan="6" Grid.ColumnSpan="6" Name="PolygonsCanvas" MouseDown="MouseClick" Background="Transparent"  MouseWheel="ScelaEvent"></Canvas>
     </Grid>
 </Window>
